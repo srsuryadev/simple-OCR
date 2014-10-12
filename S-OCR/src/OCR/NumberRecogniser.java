@@ -12,6 +12,10 @@ public class NumberRecogniser {
 	
 	private BufferedImage img;
 	
+	private Neuron n;
+	
+	public int guessedNumber;
+	
 	private int[][] pixels;
 	
 	
@@ -19,6 +23,8 @@ public class NumberRecogniser {
 		processImage(path);
 		evaluate();
 	}
+	
+	
 	
 	public void processImage(String path) throws IOException{
 		img=ImageIO.read(new File(path));
@@ -37,7 +43,7 @@ public class NumberRecogniser {
 	
 	public void evaluate(){
 		
-		
+		guessedNumber=n.startFunction(pixels);
 	}
 	
 }
